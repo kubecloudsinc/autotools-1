@@ -51,15 +51,10 @@ public class HibernateCountryDao implements CountryDao {
 
     @Transactional(readOnly = true, value="txManager")
     @SuppressWarnings("unchecked")
-    public Country getById(Long id) throws DataAccessException {
+    public Country getById(String id) throws DataAccessException {
         Object result = this.getSession().get(Country.class, id);
         this.logger.debug("Got {} by id {}", result, id);
         return (Country) result;
-    }
-
-    @Override
-    public Country getById(String id) throws DataAccessException {
-        return this.findOne("from Country where countryId=?", id);
     }
 
     @Transactional(readOnly = true, value="txManager")
@@ -105,4 +100,6 @@ public class HibernateCountryDao implements CountryDao {
         }
         logger.info("CLEARED THE HIBERNATE SESSIONS");
     }
+
+
 }

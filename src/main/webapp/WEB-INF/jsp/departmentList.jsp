@@ -4,27 +4,24 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="f" uri="/WEB-INF/functions.tld"%>
-<tags:page title="Regions" nav="regions">
+<tags:page title="Deprtments at ${location.postalCode}, ${location.city}  " nav="regions">
   <c:choose>
-    <c:when test="${fn:length(regionList) == 0}">
-      <p>No Regions</p>
+    <c:when test="${fn:length(departmentList) == 0}">
+      <p>No Departments</p>
     </c:when>
     <c:otherwise>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th class="number">Id</th>
-            <th>Name</th>
+            <th>Department Name</th>
           </tr>
         </thead>
         <tbody>
-          <c:forEach var="region" items="${regionList}">
-            <c:url var="viewUrl" value="/countries.html">
-              <c:param name="id" value="${region.id}"/>
-            </c:url>
+          <c:forEach var="department" items="${departmentList}">
            <tr>
-              <td class="number">${region.id}</td>
-              <td><a href="${viewUrl}">${fn:escapeXml(region.regionName)}</a></td>
+              <td class="number">${department.id}</td>
+              <td>${fn:escapeXml(department.departmentName)}</td>
             </tr>
           </c:forEach>
         </tbody>

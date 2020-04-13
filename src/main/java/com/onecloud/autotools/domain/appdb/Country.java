@@ -4,11 +4,10 @@ package com.onecloud.autotools.domain.appdb;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "COUNTRIES")
@@ -19,6 +18,8 @@ public class Country {
 
     private String countryId;
     private String countryName;
+    private Region region;
+    private Set<Location> locations=new HashSet<Location>();
 
     @Id
     @Column(name="COUNTRY_ID", length = 2, nullable = false, columnDefinition = "char")
@@ -38,6 +39,25 @@ public class Country {
 
     public void setCountryName(String countryName) {
         this.countryName = countryName;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="REGION_ID")
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
+    }
+
+    @OneToMany(mappedBy="country", targetEntity=Location.class, fetch = FetchType.LAZY)
+    public Set<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Set<Location> locations) {
+        this.locations = locations;
     }
 
     @Override

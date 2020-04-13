@@ -4,7 +4,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="f" uri="/WEB-INF/functions.tld"%>
-<tags:page title="Countries in Region" nav="regions">
+<tags:page title="Countries in ${region.regionName}" nav="regions">
   <c:choose>
     <c:when test="${fn:length(countryList) == 0}">
       <p>No Countries</p>
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
           <c:forEach var="country" items="${countryList}">
-            <c:url var="viewUrl" value="/country.html">
+            <c:url var="viewUrl" value="/locations.html">
               <c:param name="id" value="${country.countryId}"/>
             </c:url>
            <tr>

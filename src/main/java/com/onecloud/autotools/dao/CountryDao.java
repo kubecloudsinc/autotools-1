@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CountryDao{
 
-    public Country getById(String id) throws DataAccessException;
+    public Country getById(String country_id) throws DataAccessException;
 
     public List<Country> getAll() throws DataAccessException;
 

@@ -56,9 +56,17 @@
 		  class="com.onecloud.autotools.web.IdentifiableEntityListController"
 		  p:dao-ref="regionDao" p:viewName="regionList" />
 
-	<bean name="/region.html"
+	<bean name="/countries.html"
 		  class="com.onecloud.autotools.web.CountryListController"
-		  p:dao-ref="countryDao" p:viewName="countryList" />
+		  p:dao-ref="regionDao" p:viewName="countryList" />
+
+	<bean name="/locations.html"
+		  class="com.onecloud.autotools.web.LocationListController"
+		  p:dao-ref="countryDao" p:viewName="locationList" />
+
+	<bean name="/departments.html"
+		  class="com.onecloud.autotools.web.DepartmentListController"
+		  p:dao-ref="locationDao" p:viewName="departmentList" />
 
 	<bean id="exceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
