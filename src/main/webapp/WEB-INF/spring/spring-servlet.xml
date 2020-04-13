@@ -56,6 +56,10 @@
 		  class="com.onecloud.autotools.web.IdentifiableEntityListController"
 		  p:dao-ref="regionDao" p:viewName="regionList" />
 
+	<bean name="/region.html"
+		  class="com.onecloud.autotools.web.CountryListController"
+		  p:dao-ref="countryDao" p:viewName="countryList" />
+
 	<bean id="exceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
