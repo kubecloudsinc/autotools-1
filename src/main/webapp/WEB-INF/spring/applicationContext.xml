@@ -45,6 +45,8 @@
 	<bean id="countryDao" class="com.onecloud.autotools.dao.HibernateCountryDao" />
 
 	<bean id="locationDao" class="com.onecloud.autotools.dao.HibernateLocationDao" />
+
+	<bean id="employeeDao" class="com.onecloud.autotools.dao.HibernateEmployeeDao" />
 	
 	<bean id="userStoreService"	class="com.onecloud.autotools.service.DefaultUserStoreService" />
 	<bean id="userContextService" class="com.onecloud.autotools.service.DefaultUserContextService" />

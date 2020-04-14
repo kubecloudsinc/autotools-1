@@ -56,15 +56,8 @@
 								href="<c:url value='/users.html'/>">List Application Users</a></li>
 						</security:authorize>
 						<security:authorize ifAllGranted="ROLE_USER">
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Employee Details<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="<c:url value='/employee_details.html'/>">
-									       Employee List</a></li>
-									<li><a href="<c:url value='/find_employee.html'/>">
-									      Employee Search</a></li>
-								</ul>
-							</li>
+						    <li class="${nav eq 'employees'? 'active' : ''}"><a href="<c:url value='/employee_details.html'/>">
+									       Employee Details</a></li>
               	            <li class="${nav eq 'regions'? 'active' : ''}">
               	               <a href="<c:url value='/regions.html'/>">Region Details</a></li>
 						</security:authorize>
