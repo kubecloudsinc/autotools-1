@@ -22,8 +22,11 @@
         </thead>
         <tbody>
           <c:forEach var="employee" items="${employeeList}">
+            <c:url var="viewUrl" value="/employee.html">
+              <c:param name="id" value="${employee.id}"/>
+            </c:url>
            <tr>
-              <td class="number">${employee.id}</td>
+              <td class="number"><a href="${viewUrl}">${employee.id}</a></td>
               <td>${fn:escapeXml(employee.firstName)}</a></td>
               <td>${fn:escapeXml(f:trimToLength(employee.lastName, 30))}</td>
               <td>

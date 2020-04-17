@@ -72,6 +72,10 @@
 		  class="com.onecloud.autotools.web.IdentifiableEntityListController"
 		  p:dao-ref="employeeDao" p:viewName="employeeList" />
 
+	<bean name="/employee.html"
+		  class="com.onecloud.autotools.web.IdentifiableEntityGetController"
+		  p:dao-ref="employeeDao" p:viewName="employeeView" />
+
 	<bean id="exceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">

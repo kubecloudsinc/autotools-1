@@ -1,6 +1,8 @@
 
 package com.onecloud.autotools.web;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
