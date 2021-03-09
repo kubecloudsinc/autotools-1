@@ -36,7 +36,7 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<security:authorize ifNotGranted="ROLE_USER">
-							<li><a href="<c:url value='/login.html'/>">Login</a></li>
+							<li><a href="<c:url value='/login.html'/>">Autotools</a></li>
 						</security:authorize>
 						<security:authorize ifAllGranted="ROLE_USER">
 							<a class="brand" href="<c:url value='/home.html'/>">Auto

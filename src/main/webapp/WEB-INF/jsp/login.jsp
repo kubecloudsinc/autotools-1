@@ -11,11 +11,11 @@
 	uri="http://www.springframework.org/security/tags"%>
 
 <security:authorize ifNotGranted="ROLE_USER">
-	<tags:page title="Login to Auto Tools">
+	<tags:page title="Auto Tools Application">
 		<c:if test="${not empty sessionScope.SPRING_SECURITY_LAST_EXCEPTION}">
 			<spring:message var="errorTitle"
 				code="loginError.${f:getType(sessionScope.SPRING_SECURITY_LAST_EXCEPTION)}"
-				text="Your login attempt was not successful, please try again." />
+				text="unsuccessful attempt to login." />
 			<spring:message var="errorMessage"
 				code="loginErrorExtra.${f:getType(sessionScope.SPRING_SECURITY_LAST_EXCEPTION)}"
 				text="${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}" />
@@ -27,7 +27,7 @@
 		<form action="<c:url value='/security_check.html'/>" method="post"
 			class="form-horizontal">
 			<div class="control-group">
-				<label class="control-label" for="j_username">Email</label>
+				<label class="control-label" for="j_username">Username</label>
 				<div class="controls">
 					<input type="text" id="j_username" name="j_username"
 						placeholder="Email"
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="j_password">Password</label>
+				<label class="control-label" for="j_password">Secret Word</label>
 				<div class="controls">
 					<input type="password" id="j_password" name="j_password"
 						placeholder="Password" />

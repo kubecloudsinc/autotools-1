@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.onecloud</groupId>
-	<artifactId>autotools1-v1</artifactId>
+	<artifactId>autotools1-wd-login</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>autotools Webapp</name>
 	<url>http://github/autotools/</url>
 
 	<properties>
-		<final-name>autotools1-v1</final-name>
+		<final-name>autotools1-wd-login</final-name>
 		<webapp-directory>C:\tomcat7\webapps</webapp-directory>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<compiler-plugin-version>3.1</compiler-plugin-version>
